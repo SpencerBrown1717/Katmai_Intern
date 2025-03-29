@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katmai Computing - Summer Internship Program</title>
+    <style>
+        :root {
+            --primary-bg: #000000;
+            --primary-text: #ffffff;
+            --accent-color: #2196F3;
+            --secondary-bg: #121212;
+            --highlight: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--highlight);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-text);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--primary-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-text);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #1976D2;
+        }
+        
+        .program-details {
+            padding: 5rem 0;
+            background-color: var(--secondary-bg);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .detail-card {
+            background-color: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--highlight);
+        }
+        
+        .detail-card h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .tracks {
+            padding: 5rem 0;
+        }
+        
+        .tracks-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .track-card {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid var(--highlight);
+        }
+        
+        .track-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .timeline {
+            padding: 5rem 0;
+            background-color: var(--secondary-bg);
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--highlight);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            background-color: var(--primary-bg);
+            width: calc(50% - 2rem);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--highlight);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            top: 15px;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+        
+        .apply {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .apply h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .apply p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        footer {
+            background-color: var(--secondary-bg);
+            padding: a2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--highlight);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 70px;
+            }
+            
+            .timeline-item::after {
+                left: 21px !important;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">KATMAI COMPUTING</a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#apply">Apply</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Summer Internship Program 2025</h1>
+            <p>Join Katmai Computing in building the future of quantum computing technology you can hold in your hand.</p>
+            <a href="#apply" class="btn">Apply Now</a>
+        </div>
+    </section>
+    
+    <section id="about" class="program-details">
+        <div class="container">
+            <h2>About Our Internship</h2>
+            <p>At Katmai Computing, we're revolutionizing quantum computing by creating hardware that fits in your hand. Our summer internship program offers college juniors and seniors the opportunity to work on cutting-edge technology from anywhere in the world.</p>
+            
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>Remote Work</h3>
+                    <p>Work from anywhere with an internet connection. No relocation necessary.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Duration</h3>
+                    <p>8-week intensive program starting Sunday, May 4th.</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Eligibility</h3>
+                    <p>Open to college juniors and seniors with a passion for quantum computing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="program" class="tracks">
+        <div class="container">
+            <h2>Internship Tracks</h2>
+            <p>We're accepting 10 talented students across two specialized tracks:</p>
+            
+            <div class="tracks-container">
+                <div class="track-card">
+                    <h3>UI/UX Design (5 positions)</h3>
+                    <p>Create intuitive interfaces for quantum computing systems. You'll work on:</p>
+                    <ul>
+                        <li>User research and testing</li>
+                        <li>Interface design for complex systems</li>
+                        <li>Creating prototypes</li>
+                        <li>Collaborating with firmware engineers</li>
+                    </ul>
+                </div>
+                <div class="track-card">
+                    <h3>Firmware Development (5 positions)</h3>
+                    <p>Build the software that powers our quantum computing hardware. You'll work on:</p>
+                    <ul>
+                        <li>Low-level programming</li>
+                        <li>Quantum algorithm implementation</li>
+                        <li>Hardware-software integration</li>
+                        <li>Performance optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="timeline">
+        <div class="container">
+            <h2>Program Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <h3>Program Start</h3>
+                    <p>Sunday, May 4th - Virtual kickoff event and orientation</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Bi-Weekly Meetings</h3>
+                    <p>Regular check-ins with mentors and team</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Weekend Hackathon</h3>
+                    <p>One month in - Collaborative problem-solving event</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Final Presentation Day</h3>
+                    <p>8 weeks after start - Showcase your work to the Katmai team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="apply" class="apply">
+        <div class="container">
+            <h2>Apply Now</h2>
+            <p>Ready to join the quantum revolution? We're looking for passionate, creative problem-solvers to help build the future of quantum computing.</p>
+            <a href="#" class="btn">Start Application</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Katmai Computing. All rights reserved.</p>
+            <p>Located in Palo Alto, California</p>
+        </div>
+    </footer>
+</body>
+</html>
